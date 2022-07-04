@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.ts.Reporting"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.ts.testcases.TC_DataProvider">
+        <methods>
+          <include name="login"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="FetchUrlFromExcel" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ts.testcases.TC_DataProvider -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

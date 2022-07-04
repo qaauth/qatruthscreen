@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.ts.testcases.TC_Others">
+        <methods>
+          <include name="LivenessVerification"/>
+          <include name="AdvanceEMailVerification"/>
+          <include name="Court_CheckVerification"/>
+          <include name="cowinLinkGeneration"/>
+          <include name="tearDown"/>
+          <include name="AdvNameAddressMatch"/>
+          <include name="NameMatch"/>
+          <include name="EMail"/>
+          <include name="setup"/>
+          <include name="basicEmailVerification"/>
+          <include name="Email_PhoneVerification"/>
+          <include name="DocumentClassification"/>
+          <include name="FaceMatch"/>
+        </methods>
+      </class> <!-- com.ts.testcases.TC_Others -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
