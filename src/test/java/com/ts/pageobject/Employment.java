@@ -78,7 +78,7 @@ public class Employment extends NID{
 	@CacheLookup	
 	WebElement itrdob;
 
-	@FindBy(xpath ="//span[@class='sprite doc-iocn mb-10']")
+	@FindBy(id="myDropzone")
 	@CacheLookup	
 	WebElement form16;
 
@@ -421,24 +421,30 @@ public class Employment extends NID{
 		return Form16VerificationCount;
 	}
 	//Action Methods for Form 16 Verification 
-	public void Form16Verification() throws IOException, InterruptedException, AWTException {  	
+	public void Form16Verification(String docUpload) throws IOException, InterruptedException, AWTException {  	
+		
 		ldriver.get("https://www.truthscreen.com/employment/form16_verification");
 		wait = new WebDriverWait(ldriver, 120);	
 		wait.until(ExpectedConditions.visibilityOf(form16));
-		StringSelection ss = new StringSelection(From16Sample());
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+//		StringSelection ss = new StringSelection(From16Sample());
+//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		form16.click();
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
+		form16.sendKeys(docUpload);
+//		form16.sendKeys("/home/rohit.singh/git/repository1/truth_screen/documents/Form16.pdf");
+		
+//		Robot robot = new Robot();
+//		robot.keyPress(KeyEvent.VK_ENTER);
+//		robot.keyRelease(KeyEvent.VK_ENTER);
+//		robot.keyPress(KeyEvent.VK_CONTROL);
+//		robot.keyPress(KeyEvent.VK_V);
+//		robot.keyRelease(KeyEvent.VK_V);
+//		robot.keyRelease(KeyEvent.VK_CONTROL);
+//		robot.keyPress(KeyEvent.VK_ENTER);
+//		robot.keyRelease(KeyEvent.VK_ENTER);
+		
 		Thread.sleep(5000);
-		submitform16.click();	  
+		submitform16.click();
+		
 	}
 	public String verifyform16verification() {
 		wait = new WebDriverWait(ldriver, 120);

@@ -311,7 +311,7 @@ public class NID extends XLUtils{
 	@CacheLookup
 	WebElement submitBtn;
 
-	@FindBy(xpath="//table[@class='table table-striped fs-13 c6 mb-30']/tbody/tr[2]/td[contains(.,'VERT FINANCE PRIVATE LIMITED')]")
+	@FindBy(xpath="/html/body/div[1]/div[2]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div[2]/table/tbody/tr[2]/td[2]")
 	@CacheLookup
 	WebElement Epanverification;
 
@@ -576,8 +576,8 @@ public class NID extends XLUtils{
 		wait.until(ExpectedConditions.visibilityOf(NIDSearchSummary));
 		NIDSearchSummary.click();
 		int rows = ldriver.findElements(By.xpath("/html/body/div[5]/div[2]/div/ul/li")).size();
-		// Get NID all services count                
-		for (int r = 1; r <= rows; r++) {
+		// Get NID all services count  
+		for (int r = 4; r <= rows; r++) {
 			WebElement servicename = ldriver.findElement(By.xpath("/html/body/div[5]/div[2]/div/ul/li[" + r + "]"));
 			String text = servicename.getText();
 			if(text.contains("Driving License")) {
@@ -668,7 +668,7 @@ public class NID extends XLUtils{
 		return PANITDStatusCount;	
 	}
 	
-	//Action Methods for PAN ITD Status Verification 
+	///Action Methods for PAN ITD Status Verification 
 	public void PanITDVerification() throws IOException, InterruptedException {  
 		ldriver.get("https://www.truthscreen.com/Verification/pan_itd_status");
 		wait=new WebDriverWait(ldriver, 120);
@@ -678,11 +678,9 @@ public class NID extends XLUtils{
 		pname.click();
 		pname.sendKeys(PanNameSample());
 		panitddob.click();
-		js.executeScript("arguments[0].removeAttribute('readonly')",panitddob);
 		Thread.sleep(2000);
-		//js.executeScript("document.getElementsByID('VerificationDateOfBirth'.removeAttribute('readonly')", panitddob); //removed ; after)
-		// ((JavascriptExecutor) ldriver).executeScript("arguments[0].removeAttribute('readonly','readonly')", date2);	
-		// Enter Date directly into the field
+    	js.executeScript("arguments[0].removeAttribute('readonly')",panitddob);
+		Thread.sleep(2000);
 		panitddob.sendKeys(PandobSample()); 
 		Thread.sleep(500);
 		mobNo.sendKeys(STVmobilenoSample());
@@ -714,7 +712,7 @@ public class NID extends XLUtils{
 		return EAadhaarUploadCount;	
 	}
 	//E AAdhar UPLOAD
-	public void EaadharVerification() throws IOException, InterruptedException {  
+	public void EaadharVerification(String docUpload) throws IOException, InterruptedException {  
 		try {
 			ldriver.get("https://www.truthscreen.com/eaadhaar/aadhaar_upload");
 			wait = new WebDriverWait(ldriver, 120);
@@ -722,20 +720,21 @@ public class NID extends XLUtils{
 			eaadhar.click();
 			eaadhar.sendKeys(EaadharNameSample());
 			ldriver.findElement(By.id("dob")).sendKeys(EaadharyobSample());	
-			WebElement browse = ldriver.findElement(By.xpath(
-					"/html/body/div[1]/div[2]/div/div/div[2]/div/div[1]/div[3]/form/div[3]/div/div/div[1]/span"));  	  
+			WebElement browse = ldriver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/div[1]/div[3]/form/div[3]/div/div/div[1]/span"));		  	  
 			StringSelection ss = new StringSelection(EaadharpdfSample());
 			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 			browse.click();
-			Robot robot = new Robot();    
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_V);
-			robot.keyRelease(KeyEvent.VK_V);
-			robot.keyRelease(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);    
+			browse.sendKeys(docUpload);
+			
+//			Robot robot = new Robot();    
+//			robot.keyPress(KeyEvent.VK_ENTER);
+//			robot.keyRelease(KeyEvent.VK_ENTER);
+//			robot.keyPress(KeyEvent.VK_CONTROL);
+//			robot.keyPress(KeyEvent.VK_V);
+//			robot.keyRelease(KeyEvent.VK_V);
+//			robot.keyRelease(KeyEvent.VK_CONTROL);
+//			robot.keyPress(KeyEvent.VK_ENTER);
+//			robot.keyRelease(KeyEvent.VK_ENTER);    
 			Thread.sleep(500);
 			js=(JavascriptExecutor) ldriver;
 			js.executeScript("window.scrollBy(0,350)");          

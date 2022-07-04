@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -39,12 +40,13 @@ public class BaseClass {
 		PropertyConfigurator.configure(System.getProperty("user.dir") + "/log4j.properties"); // PropertyConfigurator.configure("log4j.properties");
 		// // windows machine
 		if (br.equals("chrome")) {
-		//	System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
-			//driver = new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
+//			driver = new ChromeDriver();
 			driver = new ChromeDriver(new ChromeOptions().setHeadless(true)); //for headless mode
 		} else if(br.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxPath());
-			driver = new FirefoxDriver();
+			//driver = new FirefoxDriver();
+		    driver = new FirefoxDriver(new FirefoxOptions().setHeadless(true)); //for headless mode
 		} 
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
