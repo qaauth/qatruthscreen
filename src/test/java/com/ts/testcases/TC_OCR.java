@@ -12,7 +12,7 @@ import com.ts.pageobject.Others;
 
 public class TC_OCR extends BaseClass {
 
-	//Aadhar OCR Verification  
+	///Aadhar OCR Verification  
 	@Test(enabled = true, testName = "Aadhar OCR", priority = 1)
 	public void Aadharocrverification() throws IOException, InterruptedException 
 	{	
@@ -49,7 +49,7 @@ public class TC_OCR extends BaseClass {
 			Assert.assertTrue(false);
 		}
 	}
-	//PAN OCR Verification 
+	///PAN OCR Verification 
 	@Test(enabled = true, testName = "PAN OCR", priority = 2)
 	public void PanocrVerification() throws IOException, InterruptedException 
 	{	
@@ -87,7 +87,7 @@ public class TC_OCR extends BaseClass {
 		}
 	}
 
-	//DL OCR Verification 
+	///DL OCR Verification 
 	@Test(enabled = true, testName = "DL OCR", priority = 3)
 	public void dlocrVerification() throws IOException, InterruptedException 
 	{	
@@ -125,7 +125,7 @@ public class TC_OCR extends BaseClass {
 		}
 	}
 
-	//Voter Id OCR Verification  
+	///Voter Id OCR Verification  
 	@Test(enabled = true, testName = "Voter Id OCR", priority = 4)
 	public void voteridocrVerification() throws IOException, InterruptedException 
 	{	
@@ -163,7 +163,7 @@ public class TC_OCR extends BaseClass {
 		}
 	}
 
-	//Passport OCR Verification 
+	///Passport OCR Verification 
 	@Test(enabled = true, testName = "Passport OCR", priority = 5)
 	public void PasspocrVerification() throws IOException, InterruptedException 
 	{	
@@ -201,7 +201,7 @@ public class TC_OCR extends BaseClass {
 		}
 	}
 
-	//cheque OCR Verification
+	///cheque OCR Verification
 	@Test(enabled = true, testName = "cheque OCR", priority = 6)
 	public void chequeOcrVerification() throws IOException, InterruptedException 
 	{
@@ -239,8 +239,8 @@ public class TC_OCR extends BaseClass {
 		}
 	}
 
-	//Advance Passport OCR
-	@Test(enabled = true, testName = "Advance passport OCR", priority = 7)
+	///Advance Passport OCR(Not Present on live)
+	@Test(enabled = false, testName = "Advance passport OCR", priority = 7)
 	public void AdvancePassportOCRVerification() throws IOException, InterruptedException {
 
 		OCR ocr=new OCR(driver);

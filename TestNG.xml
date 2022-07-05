@@ -8,13 +8,13 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.ts.testcases.TC_Login" />
-	        <class name="com.ts.testcases.TC_NID" />
- <!--	    <class name="com.ts.testcases.TC_Utility" />  
+	<!--    <class name="com.ts.testcases.TC_NID" />    
+ 	        <class name="com.ts.testcases.TC_Utility" />  
 	        <class name="com.ts.testcases.TC_Professionals" />  
             <class name="com.ts.testcases.TC_Others" />   
-	        <class name="com.ts.testcases.TC_OCR" /> 
+	        <class name="com.ts.testcases.TC_OCR" /> -->
 	        <class name="com.ts.testcases.TC_Employment" />  
-	        <class name="com.ts.testcases.TC_Bank" />   
+	   <!-- <class name="com.ts.testcases.TC_Bank" />   
 	        <class name="com.ts.testcases.TC_Business" />  
 	        <class name="com.ts.testcases.TC_CourtCheck" />   -->
 	  <!--  <class name="com.ts.testcases.TC_DataProvider" />

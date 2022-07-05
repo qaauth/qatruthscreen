@@ -51,7 +51,7 @@ public class TC_Professionals extends BaseClass {
 	}
 
 
-	//CA verification
+	///CA verification
 	@Test(enabled= true, testName="CA Verification" , priority=1)
 	public void CAverification() throws InterruptedException, IOException
 	{
@@ -89,7 +89,7 @@ public class TC_Professionals extends BaseClass {
 		}	
 	}
 
-	//Doctor verification
+	///Doctor verification
 	@Test(enabled= true, testName="Doctor Verification" , priority=1)
 	public void Doctorverification() throws InterruptedException, IOException {
 		Professionals getbeforecount= new  Professionals(driver);
@@ -126,7 +126,7 @@ public class TC_Professionals extends BaseClass {
 		}
 	}
 
-	//Dentist verification
+	///Dentist verification
 	@Test(enabled= true, testName="Dentist Verification" , priority=1)
 	public void Dentistverification() throws InterruptedException, IOException
 	{
@@ -164,7 +164,7 @@ public class TC_Professionals extends BaseClass {
 		}
 	}
 
-	//ICSI verification
+	///ICSI verification
 	@Test(enabled= true, testName="ICSI Verification" , priority=1)
 	public void ICSIverification() throws InterruptedException, IOException
 	{
@@ -203,7 +203,7 @@ public class TC_Professionals extends BaseClass {
 		}
 	}
 
-	//ICWAI verification
+	///ICWAI verification
 	@Test(enabled= true, testName="ICWAI Verification" , priority=1)
 	public void ICWAIverification() throws InterruptedException, IOException
 	{
@@ -242,7 +242,7 @@ public class TC_Professionals extends BaseClass {
 		}
 	}
 
-	//Insurance Agent Pan check Verification
+	///Insurance Agent Pan check Verification
 	@Test(enabled= true, testName="Insurance Agent Pan check Verification" , priority=1)
 	public void InsuranceAgentPanCheckverification() throws InterruptedException, IOException
 	{
@@ -280,7 +280,8 @@ public class TC_Professionals extends BaseClass {
 			Assert.assertTrue(false);
 		}
 	}
-	//Nurse Verification//
+	
+	///Nurse Verification//newly added
 	@Test(enabled = true, testName = "Nurse Verification", priority = 1)
 	public void NurseVerification() throws IOException, InterruptedException 
 	{	

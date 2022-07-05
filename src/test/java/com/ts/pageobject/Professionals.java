@@ -61,7 +61,7 @@ public class Professionals extends NID{
 	WebElement nuidnumber;
 
 	//Verification locators
-	@FindBy(xpath= "//*[contains(text(),'JAGAN BODDEDA')]")
+	@FindBy(xpath="/html/body/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div/div/table[1]/tbody/tr[3]/td[2]")//(xpath= "//*[contains(text(),'JAGAN BODDEDA')]")
 	@CacheLookup
 	WebElement IAverificationtext;
 

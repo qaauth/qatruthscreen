@@ -11,7 +11,7 @@ import com.ts.pageobject.NID;
 public class TC_NID extends BaseClass {
 
 	///PAN service is being validated 
-	@Test(enabled = false, testName = "PAN card", priority = 1)
+	@Test(enabled = true, testName = "PAN card", priority = 1)
 	public void PANVerification() throws IOException, InterruptedException 
 
 	{	
@@ -51,7 +51,7 @@ public class TC_NID extends BaseClass {
 	}
 
 	///PASSPORT and Passport (with OCR) are exactly similar services
-	@Test(enabled =false, testName = "Passport", priority = 2)
+	@Test(enabled =true, testName = "Passport", priority = 2)
 	public void PassportVerification() throws InterruptedException, IOException{
 		NID beforeSearhCount = new NID(driver);
 		String beforecount= beforeSearhCount.getPassportSearchCount();
@@ -89,7 +89,7 @@ public class TC_NID extends BaseClass {
 	}
 
 	///VOTERID
-	@Test(enabled = false, testName = "Voter id", priority = 3)
+	@Test(enabled = true, testName = "Voter id", priority = 3)
 	public void VoterIdverification() throws InterruptedException, IOException{
 		NID beforeSearchCount= new NID(driver);
 		String beforecount= beforeSearchCount.getVoterIdSearchCount();
@@ -126,7 +126,7 @@ public class TC_NID extends BaseClass {
 	}
 
 	///AADHAR 
-	@Test(enabled = false, testName = "Aadhar Verification", priority = 4)
+	@Test(enabled = true, testName = "Aadhar Verification", priority = 4)
 	public void AadharVerification() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount= beforeSearchCount.getAadharSearchCount();
@@ -163,7 +163,7 @@ public class TC_NID extends BaseClass {
 	}
 
 	///DL  verification
-	@Test(enabled =false, testName = "DL Verification", priority = 5)
+	@Test(enabled =true, testName = "DL Verification", priority = 5)
 	public void DLVerification() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount= beforeSearchCount.getDLSearchCount();
@@ -199,7 +199,7 @@ public class TC_NID extends BaseClass {
 	}
 
 	///PAN Name match Verification
-	@Test(enabled = false, testName = "PAN Name Verification", priority = 6)
+	@Test(enabled = true, testName = "PAN Name Verification", priority = 6)
 	public void PanNameVerification() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount= beforeSearchCount.getPanNameSearchCount();
@@ -236,8 +236,8 @@ public class TC_NID extends BaseClass {
 		}
 	}
 
-	///PAN ITD status 
-	@Test(enabled = false, testName = "PAN ITD Verification", priority = 7)
+	///PAN ITD status //
+	@Test(enabled = true, testName = "PAN ITD Verification", priority = 7)
 	public void PanITDVerification() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount= beforeSearchCount.getPanITDSearchCount();
@@ -274,8 +274,8 @@ public class TC_NID extends BaseClass {
 		}
 	}
 
-	//E Aadhar upload Verification //techanical error
-	@Test(enabled = true, testName = "E aadhar Verification", priority = 8)//
+	///E Aadhar upload Verification //techanical error
+	@Test(enabled = false, testName = "E aadhar Verification", priority = 8)//
 	public void Eaadharverification() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount= beforeSearchCount.getEAadharSearchCount();
@@ -312,7 +312,7 @@ public class TC_NID extends BaseClass {
 	}
 
 	/// PAN NAME DOB MATCH
-	@Test(enabled = false, testName = "Pan Name Dob Verification", priority = 9)
+	@Test(enabled = true, testName = "Pan Name Dob Verification", priority = 9)
 	public void pannamedob() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount= beforeSearchCount.getPanNameDOBSearchCount();
@@ -349,8 +349,8 @@ public class TC_NID extends BaseClass {
 		}
 	}
 
-	//PAN AAdhar Seeding
-	@Test(enabled = false, testName = "Pan Aadhar Seeding Verification", priority = 10)
+	///PAN AAdhar Seeding
+	@Test(enabled = true, testName = "Pan Aadhar Seeding Verification", priority = 10)
 	public void panaadhar() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount= beforeSearchCount.getPanAadharSeedingSearchCount();
@@ -387,8 +387,8 @@ public class TC_NID extends BaseClass {
 		}
 	}
 
-	//Passport Verification Using File Number
-	@Test(enabled = false, testName = "Passport Verification Using File Number", priority = 11)
+	///Passport Verification Using File Number
+	@Test(enabled = true, testName = "Passport Verification Using File Number", priority = 11)
 	public void passportfile() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount=beforeSearchCount.getPassportVerificationUsingFileNumSearchCount();
@@ -424,8 +424,8 @@ public class TC_NID extends BaseClass {
 		}
 	}
 
-	//ckyc verification
-	@Test(enabled = false, testName = "CKYC Verification", priority = 12)
+	///ckyc verification
+	@Test(enabled = true, testName = "CKYC Verification", priority = 12)
 	public void ckycVerify() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount=beforeSearchCount.getCKYCsearchCount();
@@ -459,8 +459,8 @@ public class TC_NID extends BaseClass {
 			Assert.assertTrue(false);
 		}
 	}
-	//Aadhar masking
-	@Test(enabled = false, testName = "Aadhar masking", priority = 13)
+	///Aadhar masking
+	@Test(enabled = true, testName = "Aadhar masking", priority = 13)
 	public void AdhaarMasking() throws InterruptedException, IOException {
 		NID beforeSearchCount = new NID(driver);
 		String beforecount=beforeSearchCount.getAdhaarMaskingsearchCount();
@@ -496,7 +496,7 @@ public class TC_NID extends BaseClass {
 	}
 
 
-	//Advance Pan Verification//
+	///Advance Pan Verification//(Technical error)
 	@Test(enabled = false, testName = "Advance PAN Card verification", priority = 14)
 	public void AdvancePANVerification() throws IOException, InterruptedException 
 	{	
@@ -534,7 +534,7 @@ public class TC_NID extends BaseClass {
 	}
 
 
-	//EPFO Employer Advance Verification//not present in live
+	///EPFO Employer Advance Verification//not present in live
 	@Test(enabled = false, testName = "EPFO Employer Advance Verification", priority = 15)
 	public void EPFOEmployerAdvanceVerification() throws IOException, InterruptedException 
 	{	
@@ -573,7 +573,7 @@ public class TC_NID extends BaseClass {
 	}
 
 	///property tax verification//newly added
-	@Test(enabled = false, testName = "Property tax", priority = 16)
+	@Test(enabled = true, testName = "Property tax", priority = 16)
 	public void PropertyTaxVerification() throws IOException, InterruptedException {	
 		NID nid= new NID(driver);
 		String beforecount= nid.getPropertyTaxSearchCount();
@@ -608,8 +608,8 @@ public class TC_NID extends BaseClass {
 		}	
 	}
 
-	///Epan verification//Newly added//error
-	@Test(enabled = false, testName = "Property tax", priority = 17)
+	///Epan verification//Newly added
+	@Test(enabled = true, testName = "Property tax", priority = 17)
 	public void EpanVerification() throws IOException, InterruptedException {	
 		NID nid= new NID(driver);
 		String beforecount= nid.getEpanSearchCount();

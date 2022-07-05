@@ -426,21 +426,11 @@ public class Employment extends NID{
 		ldriver.get("https://www.truthscreen.com/employment/form16_verification");
 		wait = new WebDriverWait(ldriver, 120);	
 		wait.until(ExpectedConditions.visibilityOf(form16));
-//		StringSelection ss = new StringSelection(From16Sample());
-//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+		StringSelection ss = new StringSelection(From16Sample());
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		form16.click();
 		form16.sendKeys(docUpload);
 //		form16.sendKeys("/home/rohit.singh/git/repository1/truth_screen/documents/Form16.pdf");
-		
-//		Robot robot = new Robot();
-//		robot.keyPress(KeyEvent.VK_ENTER);
-//		robot.keyRelease(KeyEvent.VK_ENTER);
-//		robot.keyPress(KeyEvent.VK_CONTROL);
-//		robot.keyPress(KeyEvent.VK_V);
-//		robot.keyRelease(KeyEvent.VK_V);
-//		robot.keyRelease(KeyEvent.VK_CONTROL);
-//		robot.keyPress(KeyEvent.VK_ENTER);
-//		robot.keyRelease(KeyEvent.VK_ENTER);
 		
 		Thread.sleep(5000);
 		submitform16.click();

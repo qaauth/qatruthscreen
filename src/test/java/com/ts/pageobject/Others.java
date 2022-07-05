@@ -100,7 +100,7 @@ public class Others extends NID{
 	@CacheLookup
 	WebElement EmailVerifySearchCount;
 
-	@FindBy(xpath ="//*[contains(text(),'Your email varification process has been successfuly initiated.')]")
+	@FindBy(xpath="/html/body/div[1]/div[2]/div[1]/div/strong") //(xpath ="//*[contains(text(),'Your email varification process has been successfuly initiated.')]")
 	@CacheLookup
 	WebElement Emailphoneverificationtext;
 

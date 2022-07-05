@@ -13,7 +13,7 @@ import com.ts.pageobject.Login;
 
 public class TC_Employment extends BaseClass {
 
-	//Salary Verification (Net Banking Login Required After First Page) 
+	///Salary Verification (Net Banking Login Required After First Page) 
 	@Test(enabled = false, testName = "Salary Verification", priority = 1)
 	public void Salary_Verification() throws IOException, InterruptedException 
 	{	
@@ -52,14 +52,14 @@ public class TC_Employment extends BaseClass {
 		}	
 	}		
 
-	//ITR Status Verification(Not working properly)
-	@Test(enabled = false, testName = "ITR Status", priority = 1)//
+	///ITR Status Verification(Not working properly)(otp required)
+	@Test(enabled = false, testName = "ITR Status", priority = 1)
 	public void Itrstaus_Verification() throws IOException, InterruptedException {	
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.getITRStatusSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("before ITR Status Verification search count=="+BeforeSearchCount);
 		logger.info("got ITR status  search count before search");
-		System.out.println("before Passport  OCR search count=="+BeforeSearchCount);
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);
 		obj.ITRstatusVerification();
@@ -77,8 +77,8 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.getITRStatusSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("after ITR Status Verification search count=="+AfterSearchCount);
 		logger.info("got ITR status search count after search");
-		System.out.println("before Passport  OCR search count=="+AfterSearchCount);
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
 			Assert.assertTrue(true); 
@@ -92,13 +92,14 @@ public class TC_Employment extends BaseClass {
 	}	
 
 	//Form-16 Verification
-	@Test(enabled = true, testName = "Form 16 verification", priority = 1)
+	@Test(enabled = false, testName = "Form 16 verification", priority = 1)
 	public void Form16_Verification() throws IOException, InterruptedException, AWTException 
 	{	
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.getForm16VerificationSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
-		logger.info("got form-16 verification  search count before search=="+BeforeSearchCount);
+		System.out.println("before Form-16 Verification search count=="+BeforeSearchCount);
+		logger.info("got form-16 verification  search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);
 		obj.Form16Verification((System.getProperty("user.dir") + "/documents/Form16.pdf"));
@@ -116,7 +117,8 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.getForm16VerificationSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
-		logger.info("got form-16 verification search count after search=="+AfterSearchCount);
+		System.out.println("after Form-16 Verification search count=="+AfterSearchCount);
+		logger.info("got form-16 verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
 			Assert.assertTrue(true); 
@@ -128,14 +130,15 @@ public class TC_Employment extends BaseClass {
 		}	
 	}	
 
-	//PAN_TAN Verification
+	///PAN_TAN Verification
 	@Test(enabled = true, testName = "PAN/TAN verification", priority = 1)
 	public void PAN_TAN_Verification() throws IOException, InterruptedException 
 	{	
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.getPANTANVerificationSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
-		logger.info("got pan/tan verification  search count before search=="+BeforeSearchCount);
+		System.out.println("Before PAN_TAN Verification search count=="+BeforeSearchCount);
+		logger.info("got pan/tan verification  search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);
 		obj.PanTanVerification();
@@ -153,7 +156,8 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.getPANTANVerificationSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
-		logger.info("got PAN/TAN verification search count after search=="+AfterSearchCount);
+		System.out.println("After PAN_TAN Verification search count=="+AfterSearchCount);
+		logger.info("got PAN/TAN verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
 			Assert.assertTrue(true); 
@@ -173,6 +177,7 @@ public class TC_Employment extends BaseClass {
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.getITRChallanVerificationSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before ITR Challan TAN Based Verification search count=="+BeforeSearchCount);
 		logger.info("got ITR Challan verification  search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);
@@ -191,6 +196,7 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.getITRChallanVerificationSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After ITR Challan TAN Based Verification search count=="+AfterSearchCount);
 		logger.info("got ITR Challan verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -203,14 +209,15 @@ public class TC_Employment extends BaseClass {
 			Assert.assertTrue(false);
 		}	
 	}
-	//Basic UAN Verification//service unavailable in live
-	@Test(enabled = false, testName = "Basic UAN verification", priority = 1)//
+	///Basic UAN Verification
+	@Test(enabled = true, testName = "Basic UAN verification", priority = 1)//
 	public void basicUANVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.getUANVerificationSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
-		logger.info("got basic UAN verification search count before search=="+BeforeSearchCount);
+		System.out.println("Before Basic UAN Verification search count=="+BeforeSearchCount);
+		logger.info("got basic UAN verification search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);
 		obj.basicUANVerification();
@@ -228,7 +235,8 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.getUANVerificationSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
-		logger.info("got basic UAN verification search count after search=="+AfterSearchCount);
+		System.out.println("After Basic UAN Verification search count=="+AfterSearchCount);
+		logger.info("got basic UAN verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
 			Assert.assertTrue(true); 
@@ -240,6 +248,7 @@ public class TC_Employment extends BaseClass {
 			Assert.assertTrue(false);
 		}
 	}
+	
 	//EPFO Check Exact Match (services removed from live)
 	@Test(enabled = false, testName = "EPFO Check Exact Match", priority = 1)//
 	public void epfoCheckVerification() throws IOException, InterruptedException 
@@ -247,6 +256,7 @@ public class TC_Employment extends BaseClass {
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.getEpfoCheckSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before EPFO Check Exact Match search count=="+BeforeSearchCount);
 		logger.info("got EPFO Check Exact Match verification search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);		
@@ -265,6 +275,7 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.getEpfoCheckSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After EPFO Check Exact Match search count=="+AfterSearchCount);
 		logger.info("got epfo exact match verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -278,13 +289,14 @@ public class TC_Employment extends BaseClass {
 		}
 	}
 
-	//EPFO Employer search/Employer PF Verification
+	///EPFO Employer search/Employer PF Verification
 	@Test(enabled = true, testName = "EPFO Employer search verification", priority = 1)
 	public void EpfoEmployerSearchVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.EpfoEmployerSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before EPFO Employer search search count=="+BeforeSearchCount);
 		logger.info("got EPFO Employer verification search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);		
@@ -303,6 +315,7 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.EpfoEmployerSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After EPFO Employer search search count=="+AfterSearchCount);
 		logger.info("got EPFO Employer verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -315,13 +328,14 @@ public class TC_Employment extends BaseClass {
 			Assert.assertTrue(false);
 		}
 	}
-	//EPFO Employee search/Employee verification
+	///EPFO Employee search/Employee verification
 	@Test(enabled = true, testName = "EPFO Employee verification", priority = 1)//tech error 
 	public void EpfoEmployeeVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.EpfoEmployeeVerificationSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before EPFO Employer search search count=="+BeforeSearchCount);
 		logger.info("got EPFO Employee verification search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);		
@@ -340,6 +354,7 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.EpfoEmployeeVerificationSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After EPFO Employer search search count=="+AfterSearchCount);
 		logger.info("got EPFO Employee verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -353,13 +368,14 @@ public class TC_Employment extends BaseClass {
 		}
 	}
 
-	//Employer Default Check verification //technical error
-	@Test(enabled = false, testName = "Employer Default Check verification", priority = 1)
+	///Employer Default Check verification 
+	@Test(enabled = true, testName = "Employer Default Check verification", priority = 1)
 	public void EmployerDefaultCheckVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.EmployerDefaultCheckSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before Employer Default Check verification search count=="+BeforeSearchCount);
 		logger.info("got Employer Default Check verification search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);		
@@ -378,6 +394,7 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.EmployerDefaultCheckSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After Employer Default Check verification search count=="+AfterSearchCount);
 		logger.info("got Employer Default Check verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -391,13 +408,14 @@ public class TC_Employment extends BaseClass {
 		}
 	}
 
-	//BGV Employment check
+	///BGV Employment check
 	@Test(enabled = true, testName = "BGV: Employment check", priority = 1)
 	public void BgvEmploymentCheckVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
 		String beforecount= getbeforecount.BgvEmployementCheckSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before BGV Employment check search count=="+BeforeSearchCount);
 		logger.info("got BGV: Employment check verification search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);		
@@ -416,6 +434,7 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.BgvEmployementCheckSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After BGV Employment check search count=="+AfterSearchCount);
 		logger.info("got BGV: Employment check verification search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -429,15 +448,15 @@ public class TC_Employment extends BaseClass {
 		}
 	}
 
-	//Dual Employment Check//not working
+	///Dual Employment Check//not working/Not Available
 	@Test(enabled = false, testName = "Dual Employment Check", priority = 1)
 	public void DualEmploymentCheckVerification() throws IOException, InterruptedException {
 		
 		Employment employement= new Employment(driver);
 		String beforecount= employement.getDualEmploymentCheckSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before Dual Employment Check search count=="+BeforeSearchCount);
 		logger.info("got Dual Employment Check  search count before search");
-		System.out.println("before Dual Employment Check search count=="+BeforeSearchCount);
 		Thread.sleep(100);
 		employement.DualEmploymentCheckVerification();
 		logger.info("Dual Employment Check verification Sample submitted");
@@ -457,8 +476,8 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.getDualEmploymentCheckSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After Dual Employment Check search count=="+AfterSearchCount);
 		logger.info("got Dual Employment Check search count after search");
-		System.out.println("before Dual Employment Check search count=="+AfterSearchCount);
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
 			Assert.assertTrue(true); 
@@ -471,15 +490,15 @@ public class TC_Employment extends BaseClass {
 		}	
 	}
 	
-	//Negative Due Deligance
+	///Negative Due Deligance
 	@Test(enabled = true, testName = "Negative Due Deligance", priority = 1)
 	public void NegativeDueDeliganceVerification() throws IOException, InterruptedException {
 		
 		Employment employement= new Employment(driver);
 		String beforecount= employement.getNegativeDueDeliganceSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
-		logger.info("got Negative Due Deligance search count before search");
 		System.out.println("before Negative Due Deligance search count=="+BeforeSearchCount);
+		logger.info("got Negative Due Deligance search count before search");
 		Thread.sleep(100);
 		employement.NegativeDueDeliganceVerification();
 		logger.info("Negative Due Deligance verification Sample submitted");
@@ -499,8 +518,8 @@ public class TC_Employment extends BaseClass {
 		Employment getaftercount= new Employment(driver);
 		String aftercount= getaftercount.getNegativeDueDeliganceSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
-		logger.info("got Negative Due Deligance search count after search");
 		System.out.println("before Negative Due Deligance search count=="+AfterSearchCount);
+		logger.info("got Negative Due Deligance search count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
 			Assert.assertTrue(true); 
