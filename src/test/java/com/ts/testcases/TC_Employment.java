@@ -102,7 +102,7 @@ public class TC_Employment extends BaseClass {
 		logger.info("got form-16 verification  search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);
-		obj.Form16Verification((System.getProperty("user.dir") + "/documents/Form16.pdf"));
+		obj.Form16Verification((System.getProperty("user.dir") + "./documents/Form16.pdf"));
 		logger.info("Form 16 Sample submitted");
 		if (obj.verifyform16verification().contains("Form16 Status"))
 		{

@@ -18,6 +18,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -245,7 +246,7 @@ public class Business extends NID{
 
 	@FindBy(xpath= "//table[@class='table table-striped fs-13 c6']/thead/tr/th[2]") 
 	@CacheLookup
-	WebElement csverificationtext;
+	WebElement companyverificationtext;
 
 	@FindBy(xpath ="//*[@id='main']/div[2]/div[1]/div/div[2]/div/div[2]/div/div/div/table/thead/tr/th[2]") 
 	@CacheLookup
@@ -985,14 +986,14 @@ public class Business extends NID{
 		return CompanyNameSearchCount;
 	}
 	//Action Methods for Company Search Verification
-	public void CompanySearch() {
+	public void CompanySearch() throws InterruptedException {
 		try {
 			ldriver.get("https://www.truthscreen.com/search/search_by_company_name");
 			wait = new WebDriverWait(ldriver, 90);
 			wait.until(ExpectedConditions.visibilityOf(company_search));
 			company_search.click();
-			company_search.sendKeys(CompanySearchSample());		 
-			Searchbutton.click();			
+			company_search.sendKeys(CompanySearchSample());
+			Searchbutton.click();		
 		}		
 		catch (IOException e) 
 		{	
@@ -1003,8 +1004,8 @@ public class Business extends NID{
 		js=(JavascriptExecutor) ldriver;
 		js.executeScript("window.scrollBy(0,200)");
 		wait = new WebDriverWait(ldriver, 90);
-		wait.until(ExpectedConditions.visibilityOf(csverificationtext));				
-		return csverificationtext.getText();	
+		wait.until(ExpectedConditions.visibilityOf(companyverificationtext));
+		return companyverificationtext.getText();	
 	}
 
 	//action method for Know Your GSTIN- PANINDIA  search count
@@ -1382,7 +1383,7 @@ public class Business extends NID{
 			submitBtn.click();	
 			wait.until(ExpectedConditions.visibilityOf(submitButton));
 			submitButton.click();
-			Thread.sleep(13000);
+			Thread.sleep(3000);
 		}		
 		catch (IOException e) {	
 			e.printStackTrace();

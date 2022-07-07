@@ -17,7 +17,7 @@ import com.ts.pageobject.Professionals;
 
 public class TC_Business extends BaseClass{
 
-	// Test Case for DIN Verification
+	/// Test Case for DIN Verification
 	@Test(enabled = true, testName = "DIN", priority = 1)
 	public void DINverification() throws IOException, InterruptedException 
 	{	
@@ -55,7 +55,7 @@ public class TC_Business extends BaseClass{
 		}	
 	}
 
-	//Test Case for CIN Verification
+	///Test Case for CIN Verification
 	@Test(enabled = true, testName = "CIN", priority = 1)
 	public void CINVerification() throws IOException, InterruptedException 
 	{	
@@ -167,7 +167,8 @@ public class TC_Business extends BaseClass{
 			Assert.assertTrue(false);
 		}
 	}
-	//Test Case for Shop N Establishment Verification
+	
+	///Test Case for Shop N Establishment Verification
 	@Test(enabled = true, testName = "Shop n Establishement", priority = 1)
 	public void ShopNEstablishementVerification() throws IOException, InterruptedException 
 	{
@@ -205,7 +206,7 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//Test Case for Drug License Verification
+	///Test Case for Drug License Verification
 	@Test(enabled = true, testName = "Drug License", priority = 1)
 	public void DruglicenseVerification() throws IOException, InterruptedException 
 	{	
@@ -243,7 +244,7 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//Test Case for Udyog AAdhaar Verification 			  
+	///Test Case for Udyog AAdhaar Verification 			  
 	@Test(enabled = true, testName = "Udyog Adhar", priority = 1)
 	public void UdyogAdharVerification() throws IOException, InterruptedException 
 	{	
@@ -281,7 +282,7 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//Test Case for PAN Director Verification
+	///Test Case for PAN Director Verification
 	@Test(enabled = true, testName = "Pan Director", priority = 1)
 	public void PanDirectorVerification() throws IOException, InterruptedException 
 	{	
@@ -322,7 +323,7 @@ public class TC_Business extends BaseClass{
 	}			
 
 	//Test Case for ESIC Verification //not working
-	@Test(enabled = false, testName = "ESIC", priority = 1)//
+	@Test(enabled = false, testName = "ESIC", priority = 1)
 	public void ESICVerification() throws IOException, InterruptedException 
 	{
 		Business  getbeforecount= new  Business(driver);
@@ -360,7 +361,7 @@ public class TC_Business extends BaseClass{
 		}
 	}			
 
-	//Test Case for GSTIN Verification 
+	///Test Case for GSTIN Verification 
 	@Test(enabled = true, testName = "GSTIN", priority = 1)
 	public void GSTINVerification() throws IOException, InterruptedException 
 	{
@@ -399,7 +400,7 @@ public class TC_Business extends BaseClass{
 		}
 	}		
 
-	//Test Case for IEC Verification 
+	///Test Case for IEC Verification 
 	@Test(enabled = true, testName = "IEC", priority = 1)
 	public void IECVerification() throws IOException, InterruptedException 
 	{
@@ -439,7 +440,7 @@ public class TC_Business extends BaseClass{
 		}
 	}		
 
-	//Test Case for Industry Type Verification
+	///Test Case for Industry Type Verification
 	@Test(enabled = true, testName = "Industry Type", priority = 1)
 	public void IndtypeVerification() throws IOException, InterruptedException 
 	{
@@ -479,7 +480,7 @@ public class TC_Business extends BaseClass{
 		}
 	}		
 
-	//Test Case for Pan Verification Using GST
+	///Test Case for Pan Verification Using GST
 	@Test(enabled = true, testName = "PAN using GSTIN", priority = 1)
 	public void GSTPANVerification() throws IOException, InterruptedException 
 	{
@@ -519,7 +520,7 @@ public class TC_Business extends BaseClass{
 		}
 	}		
 
-	// Company Name Search  
+	/// Company Name Search  
 	@Test(enabled = true, testName = "Company Name Search", priority = 1)
 	public void CompanySearchVerification() throws IOException, InterruptedException 
 	{
@@ -532,7 +533,7 @@ public class TC_Business extends BaseClass{
 		Business obj= new Business(driver);
 		obj.CompanySearch();
 		logger.info("Test Company Sample submitted");
-		if (obj.VerifyCompanySearch().contains("Company Name")) 
+		if (obj.VerifyCompanySearch().contains("COMPANY NAME")) 
 		{
 			Assert.assertTrue(true);
 			logger.info("Company Search verification performed successfully!");
@@ -559,7 +560,7 @@ public class TC_Business extends BaseClass{
 		}
 	}	
 
-	//Know Your GSTIN- PANINDIA 
+	///Know Your GSTIN- PANINDIA 
 	@Test(enabled = true, testName = "Know Your GSTIN- PANINDIA", priority = 1)
 	public void GSTIN_PANVerification() throws IOException, InterruptedException 
 	{
@@ -599,7 +600,7 @@ public class TC_Business extends BaseClass{
 		}
 	}		
 
-	//GSTIN-Taxpayer verification
+	///GSTIN-Taxpayer verification
 	@Test(enabled = true, testName = "GSTIN-Taxpayer Verification", priority = 1)
 	public void GSTINTaxPayerVerification() throws IOException, InterruptedException 
 	{
@@ -638,7 +639,7 @@ public class TC_Business extends BaseClass{
 			Assert.assertTrue(false);
 		}
 	}	
-	//Credit Rating 
+	///Credit Rating 
 	@Test(enabled = true, testName = "Credit Rating", priority = 1)
 	public void CreditRatingVerification() throws IOException, InterruptedException 
 	{
@@ -678,8 +679,8 @@ public class TC_Business extends BaseClass{
 		}
 	}		
 
-	//ESIC Employer Verification 
-	@Test(enabled = true, testName = "ESIC Employer", priority = 1)
+	///ESIC Employer Verification (Not showing dropdown options)
+	@Test(enabled = false, testName = "ESIC Employer", priority = 1)
 	public void EsicemployerVerification() throws IOException, InterruptedException 
 	{
 		Business  getbeforecount= new  Business(driver);
@@ -719,7 +720,7 @@ public class TC_Business extends BaseClass{
 		}
 	}	
 
-	//FSSAI Verification
+	///FSSAI Verification
 	@Test(enabled = true, testName = "FSSAI", priority = 1)
 	public void FssaiVerification() throws IOException, InterruptedException 
 	{
@@ -761,7 +762,7 @@ public class TC_Business extends BaseClass{
 	}	
 
 
-	//Street Vendor Verification
+	///Street Vendor Verification
 	@Test(enabled = true, testName = "Street Vendor", priority = 1)
 	public void StreetVendorVerification() throws IOException, InterruptedException 
 	{
@@ -802,8 +803,8 @@ public class TC_Business extends BaseClass{
 		}
 	}	
 
-	//Comprehensive GST Solution Verification 
-	@Test(enabled = true, testName = "Comprehensive GST Solution", priority = 1)
+	///Comprehensive GST Solution Verification 
+	@Test(enabled = false, testName = "Comprehensive GST Solution", priority = 1)
 	public void CGSTVerification() throws IOException, InterruptedException 
 	{	
 		Business  getbeforecount= new  Business(driver);
@@ -848,7 +849,7 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//GSTR Return verification(Data required)
+	//GSTR Return verification(Data required)(otp)
 	@Test(enabled = false, testName = " GSTR Return verification", priority = 1)//
 	public void GSTRreturnVerification() throws IOException, InterruptedException 
 	{	
@@ -889,8 +890,8 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//Comprehensive GST solution Advanced verification
-	@Test(enabled = true, testName = "comprehensive gst-Advanced verification", priority = 1)
+	//Comprehensive GST solution Advanced verification(otp required)
+	@Test(enabled = false, testName = "comprehensive gst-Advanced verification", priority = 1)
 	public void ComprehensiveGstAdvancedVerification() throws IOException, InterruptedException 
 	{
 		Business  getbeforecount= new  Business(driver);
@@ -929,12 +930,13 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//UDYAM Verification
+	///UDYAM Verification
 	@Test(enabled = true, testName = "Udyam verification", priority = 1)
 	public void UdyamVerification() throws IOException, InterruptedException {
 		Business  getbeforecount= new  Business(driver);
 		String beforecount= getbeforecount.udyamVerificationSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("before UDYAM Verification count=="+BeforeSearchCount);
 		logger.info("got udyam verification search count before search");
 		Thread.sleep(100);
 		Business obj= new Business(driver);
@@ -954,6 +956,7 @@ public class TC_Business extends BaseClass{
 		Business  getaftercount= new Business(driver);
 		String aftercount= getaftercount.udyamVerificationSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("after UDYAM Verification count=="+AfterSearchCount);
 		logger.info("got udyam verification count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -967,12 +970,13 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//Udyog Aadhaar Using Phone verification
+	///Udyog Aadhaar Using Phone verification
 	@Test(enabled = true, testName = "Udyog Aadhaar Using Phone verification", priority =1)
 	public void UdyogAadhaarUsingPhoneVerification() throws IOException, InterruptedException {
 		Business  getbeforecount= new  Business(driver);
 		String beforecount= getbeforecount.udyogAadhaarUsingPhoneSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before Udyog Aadhaar Using Phone verification count=="+BeforeSearchCount);
 		logger.info("got Udyog Aadhaar Using Phone verification search count before search");
 		Thread.sleep(100);
 		Business obj= new Business(driver);
@@ -991,6 +995,7 @@ public class TC_Business extends BaseClass{
 		Business  getaftercount= new Business(driver);
 		String aftercount= getaftercount.udyogAadhaarUsingPhoneSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After Udyog Aadhaar Using Phone verification count=="+AfterSearchCount);
 		logger.info("got Udyog Aadhaar Using Phone verification count after search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -1004,12 +1009,13 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//gstin view and track return verification
+	///gstin view and track return verification
 	@Test(enabled = true, testName = "gst view and track return verification", priority = 1)
 	public void gstViewAndTrackReturnVerification() throws IOException, InterruptedException {
 		Business  getbeforecount= new  Business(driver);
 		String beforecount= getbeforecount.gstViewAndTrackReturnSearchCount();
 		int BeforeSearchCount=Integer.parseInt(beforecount);
+		System.out.println("Before gstin view and track return verification count=="+BeforeSearchCount);
 		logger.info("got gstin view and track return search count before verification");
 		Thread.sleep(100);
 		Business obj= new Business(driver);
@@ -1027,6 +1033,7 @@ public class TC_Business extends BaseClass{
 		Business  getaftercount= new Business(driver);
 		String aftercount= getaftercount.gstViewAndTrackReturnSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
+		System.out.println("After gstin view and track return verification count=="+AfterSearchCount);
 		logger.info("got gstin view and track return count after verification");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
@@ -1040,7 +1047,7 @@ public class TC_Business extends BaseClass{
 		}
 	}
 
-	//GST Basis PAN//
+	///GST Basis PAN/newly added
 	@Test(enabled = true, testName = "GST Basis PAN", priority = 1)
 	public void GSTBasisPANVerification() throws IOException, InterruptedException {
 		

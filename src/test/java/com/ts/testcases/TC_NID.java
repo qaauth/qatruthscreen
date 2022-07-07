@@ -236,8 +236,8 @@ public class TC_NID extends BaseClass {
 		}
 	}
 
-	///PAN ITD status //
-	@Test(enabled = true, testName = "PAN ITD Verification", priority = 7)
+	///PAN ITD status(otp)
+	@Test(enabled = false, testName = "PAN ITD Verification", priority = 7)
 	public void PanITDVerification() throws InterruptedException, IOException{
 		NID beforeSearchCount = new NID(driver);
 		String beforecount= beforeSearchCount.getPanITDSearchCount();
@@ -336,8 +336,8 @@ public class TC_NID extends BaseClass {
 		NID afterSearchCount = new NID(driver);
 		String aftercount= afterSearchCount.getPanNameDOBSearchCount();
 		int AfterSearchCount=Integer.parseInt(aftercount);
-		logger.info("got Pan Name DOB search count AFTER search");
 		System.out.println(" pan name dob after search count=="+AfterSearchCount);
+		logger.info("got Pan Name DOB search count AFTER search");
 		Thread.sleep(100);
 		if((AfterSearchCount-BeforeSearchCount)==1) {
 			Assert.assertTrue(true); 

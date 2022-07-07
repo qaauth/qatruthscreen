@@ -12,7 +12,7 @@ import com.ts.pageobject.Utility;
 
 public class TC_Professionals extends BaseClass {
 
-	//Insurance Agent Verification
+	///Insurance Agent Verification
 	@Test(enabled = true, testName = "Insurance Agent", priority = 1)
 	public void IAVerification() throws IOException, InterruptedException 
 	{	

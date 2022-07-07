@@ -679,10 +679,10 @@ public class NID extends XLUtils{
 		pname.sendKeys(PanNameSample());
 		panitddob.click();
 		Thread.sleep(2000);
+		js=(JavascriptExecutor) ldriver;
     	js.executeScript("arguments[0].removeAttribute('readonly')",panitddob);
-		Thread.sleep(2000);
 		panitddob.sendKeys(PandobSample()); 
-		Thread.sleep(500);
+		Thread.sleep(2000);
 		mobNo.sendKeys(STVmobilenoSample());
 		btnsubmit.click();
 	}

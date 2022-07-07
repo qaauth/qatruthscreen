@@ -205,7 +205,7 @@ public class TC_Utility extends BaseClass {
 			Assert.assertTrue(false);
 		}	
 	}
-	// Detail RC Verification   
+	/// Detail RC Verification   
 	@Test(enabled = true, testName = "RC Verification", priority = 1 )
 	public void RCVerification() throws IOException, InterruptedException 
 	{	
@@ -245,7 +245,7 @@ public class TC_Utility extends BaseClass {
 		}	
 	}
 
-	// Stolen Vehicle Verification //test data not available
+	/// Stolen Vehicle Verification //test data not available
 	@Test(enabled = true, testName = "Stolen Vehicle Registration", priority = 1 )
 	public void StolenVehicleVerification() throws IOException, InterruptedException 
 	{	

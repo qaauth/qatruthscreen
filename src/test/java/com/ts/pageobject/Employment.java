@@ -78,9 +78,14 @@ public class Employment extends NID{
 	@CacheLookup	
 	WebElement itrdob;
 
-	@FindBy(id="myDropzone")
+	@FindBy(xpath="/html/body/div[1]/div[2]/div/div/div[2]/div/div[1]/div[3]/form/div[2]/div/div/div[1]/span")
 	@CacheLookup	
 	WebElement form16;
+	
+	@FindBy(xpath="/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/form[1]/div[2]/div[1]/div[1]/div[1]/p[1]/strong[1]")
+	@CacheLookup	
+	WebElement clickOnBrowseBtn;
+	
 
 	@FindBy(xpath = "//button[@id='submit-all']")
 	@CacheLookup	
@@ -421,17 +426,18 @@ public class Employment extends NID{
 		return Form16VerificationCount;
 	}
 	//Action Methods for Form 16 Verification 
-	public void Form16Verification(String docUpload) throws IOException, InterruptedException, AWTException {  	
+	public void Form16Verification(String doc) throws InterruptedException, IOException  {  	
 		
 		ldriver.get("https://www.truthscreen.com/employment/form16_verification");
 		wait = new WebDriverWait(ldriver, 120);	
-		wait.until(ExpectedConditions.visibilityOf(form16));
-		StringSelection ss = new StringSelection(From16Sample());
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		form16.click();
-		form16.sendKeys(docUpload);
-//		form16.sendKeys("/home/rohit.singh/git/repository1/truth_screen/documents/Form16.pdf");
-		
+		wait.until(ExpectedConditions.visibilityOf(clickOnBrowseBtn));
+//		StringSelection ss = new StringSelection(From16Sample());
+//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+		//form16.click();
+		Thread.sleep(5000);
+//		form16.sendKeys(docUpload);
+		clickOnBrowseBtn.click();
+		clickOnBrowseBtn.sendKeys(doc);		
 		Thread.sleep(5000);
 		submitform16.click();
 		
