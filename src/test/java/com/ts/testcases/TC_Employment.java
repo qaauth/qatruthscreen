@@ -92,7 +92,7 @@ public class TC_Employment extends BaseClass {
 	}	
 
 	//Form-16 Verification
-	@Test(enabled = false, testName = "Form 16 verification", priority = 1)
+	@Test(enabled =  false, testName = "Form 16 verification", priority = 1)
 	public void Form16_Verification() throws IOException, InterruptedException, AWTException 
 	{	
 		Employment getbeforecount= new Employment(driver);
@@ -102,7 +102,7 @@ public class TC_Employment extends BaseClass {
 		logger.info("got form-16 verification  search count before search");
 		Thread.sleep(100);
 		Employment obj= new Employment(driver);
-		obj.Form16Verification((System.getProperty("user.dir") + "./documents/Form16.pdf"));
+		obj.Form16Verification((System.getProperty("user.dir") + "/documents/Form16.pdf"));
 		logger.info("Form 16 Sample submitted");
 		if (obj.verifyform16verification().contains("Form16 Status"))
 		{
@@ -131,7 +131,7 @@ public class TC_Employment extends BaseClass {
 	}	
 
 	///PAN_TAN Verification
-	@Test(enabled = true, testName = "PAN/TAN verification", priority = 1)
+	@Test(enabled =  true, testName = "PAN/TAN verification", priority = 1)
 	public void PAN_TAN_Verification() throws IOException, InterruptedException 
 	{	
 		Employment getbeforecount= new Employment(driver);
@@ -210,7 +210,7 @@ public class TC_Employment extends BaseClass {
 		}	
 	}
 	///Basic UAN Verification
-	@Test(enabled = true, testName = "Basic UAN verification", priority = 1)//
+	@Test(enabled =  true, testName = "Basic UAN verification", priority = 1)//
 	public void basicUANVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
@@ -290,7 +290,7 @@ public class TC_Employment extends BaseClass {
 	}
 
 	///EPFO Employer search/Employer PF Verification
-	@Test(enabled = true, testName = "EPFO Employer search verification", priority = 1)
+	@Test(enabled =  true, testName = "EPFO Employer search verification", priority = 1)
 	public void EpfoEmployerSearchVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
@@ -329,7 +329,7 @@ public class TC_Employment extends BaseClass {
 		}
 	}
 	///EPFO Employee search/Employee verification
-	@Test(enabled = true, testName = "EPFO Employee verification", priority = 1)//tech error 
+	@Test(enabled =  true, testName = "EPFO Employee verification", priority = 1)//tech error 
 	public void EpfoEmployeeVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
@@ -369,7 +369,7 @@ public class TC_Employment extends BaseClass {
 	}
 
 	///Employer Default Check verification 
-	@Test(enabled = true, testName = "Employer Default Check verification", priority = 1)
+	@Test(enabled =  true, testName = "Employer Default Check verification", priority = 1)
 	public void EmployerDefaultCheckVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
@@ -409,7 +409,7 @@ public class TC_Employment extends BaseClass {
 	}
 
 	///BGV Employment check
-	@Test(enabled = true, testName = "BGV: Employment check", priority = 1)
+	@Test(enabled =  true, testName = "BGV: Employment check", priority = 1)
 	public void BgvEmploymentCheckVerification() throws IOException, InterruptedException 
 	{
 		Employment getbeforecount= new Employment(driver);
@@ -491,7 +491,7 @@ public class TC_Employment extends BaseClass {
 	}
 	
 	///Negative Due Deligance
-	@Test(enabled = true, testName = "Negative Due Deligance", priority = 1)
+	@Test(enabled =  true, testName = "Negative Due Deligance", priority = 1)
 	public void NegativeDueDeliganceVerification() throws IOException, InterruptedException {
 		
 		Employment employement= new Employment(driver);

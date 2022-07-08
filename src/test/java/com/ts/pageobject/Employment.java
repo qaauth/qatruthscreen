@@ -436,8 +436,8 @@ public class Employment extends NID{
 		//form16.click();
 		Thread.sleep(5000);
 //		form16.sendKeys(docUpload);
-		clickOnBrowseBtn.click();
-		clickOnBrowseBtn.sendKeys(doc);		
+//		clickOnBrowseBtn.click();S
+//		clickOnBrowseBtn.sendKeys(doc);		
 		Thread.sleep(5000);
 		submitform16.click();
 		

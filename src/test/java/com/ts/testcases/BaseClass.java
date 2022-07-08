@@ -42,7 +42,7 @@ public class BaseClass {
 		if (br.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
 //			driver = new ChromeDriver();
-			driver = new ChromeDriver(new ChromeOptions().setHeadless(true)); //for headless mode
+			driver = new ChromeDriver(new ChromeOptions().setHeadless(false)); //for headless mode
 		} else if(br.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxPath());
 			//driver = new FirefoxDriver();
