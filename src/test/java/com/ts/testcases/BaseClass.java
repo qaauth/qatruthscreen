@@ -42,7 +42,7 @@ public class BaseClass {
 		if (br.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
 //			driver = new ChromeDriver();
-			driver = new ChromeDriver(new ChromeOptions().setHeadless(false)); //for headless mode
+			driver = new ChromeDriver(new ChromeOptions().setHeadless(true)); //for headless mode
 		} else if(br.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxPath());
 			//driver = new FirefoxDriver();
@@ -59,8 +59,7 @@ public class BaseClass {
 		//driver.quit();
 		// driver.close();
 	}
-	// If you want to catch failed test cases you will have to add "captureScreen"
-	// method.
+	// If you want to catch failed test cases you will have to add "captureScreen" method.
 
 	public void captureScreen(WebDriver driver, String tname) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
@@ -69,5 +68,4 @@ public class BaseClass {
 		FileUtils.copyFile(source, target);
 		System.out.println("Screenshot taken");
 	}
-
 }

@@ -3,13 +3,11 @@ package com.ts.testcases;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.ts.pageobject.Business;
 import com.ts.pageobject.Login;
 import com.ts.pageobject.Professionals;
@@ -680,7 +678,7 @@ public class TC_Business extends BaseClass{
 	}		
 
 	///ESIC Employer Verification (Not showing dropdown options)
-	@Test(enabled = false, testName = "ESIC Employer", priority = 1)
+	@Test(enabled = true, testName = "ESIC Employer", priority = 1)
 	public void EsicemployerVerification() throws IOException, InterruptedException 
 	{
 		Business  getbeforecount= new  Business(driver);
@@ -804,7 +802,7 @@ public class TC_Business extends BaseClass{
 	}	
 
 	///Comprehensive GST Solution Verification 
-	@Test(enabled = false, testName = "Comprehensive GST Solution", priority = 1)
+	@Test(enabled = true, testName = "Comprehensive GST Solution", priority = 1)
 	public void CGSTVerification() throws IOException, InterruptedException 
 	{	
 		Business  getbeforecount= new  Business(driver);
@@ -1010,7 +1008,7 @@ public class TC_Business extends BaseClass{
 	}
 
 	///gstin view and track return verification
-	@Test(enabled = false, testName = "gst view and track return verification", priority = 1)
+	@Test(enabled = true, testName = "gst view and track return verification", priority = 1)
 	public void gstViewAndTrackReturnVerification() throws IOException, InterruptedException {
 		Business  getbeforecount= new  Business(driver);
 		String beforecount= getbeforecount.gstViewAndTrackReturnSearchCount();

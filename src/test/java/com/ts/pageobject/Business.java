@@ -1,31 +1,16 @@
 package com.ts.pageobject;
-import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 public class Business extends NID{
 
@@ -535,7 +520,6 @@ public class Business extends NID{
 	// action method for Tin verification search count(removed from live)
 	public String getTinVerificationSearchCount() throws InterruptedException {
 		String TINCount=null;
-		String TinVerificationSearchCount="";
 		ldriver.get("https://www.truthscreen.com/dashboard");
 		wait=new WebDriverWait(ldriver, 90);
 		wait.until(ExpectedConditions.visibilityOf(businessSearchSummary));
@@ -1301,7 +1285,7 @@ public class Business extends NID{
 			Select objSelect = new Select(cgstdropdown);
 			Thread.sleep(500);
 			objSelect.selectByValue("2017-18");
-			SubmitButton1.click();			
+			SubmitButton1.click();
 		}		
 		catch (IOException e) {	
 			e.printStackTrace();
