@@ -315,9 +315,10 @@ public class Bank extends NID{
 				Select sel=new Select(selBankName);
 				selBankName.click();
 				Thread.sleep(1000);
-				sel.selectByIndex(1);
+				//sel.selectByIndex(1);
+				sel.selectByVisibleText("PUNJAB NATIONAL BANK");
 				Thread.sleep(1000);
-				ifscSearchText.click();
+				//ifscSearchText.click();
 				btnsubmit.click();
 			}
 			//action method for verifying ifsc code search success msg

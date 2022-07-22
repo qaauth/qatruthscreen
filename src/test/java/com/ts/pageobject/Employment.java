@@ -255,7 +255,7 @@ public class Employment extends NID{
 	@CacheLookup
 	WebElement EmployerEstablishmentId;
 
-	@FindBy(xpath ="//*[contains(text(),'Name of Establishment')]")
+	@FindBy(xpath ="//table[@class='table table-striped border-top-f4 voter']/tbody/tr[1]/td[1]")
 	@CacheLookup
 	WebElement EmployerDefaultCheckVerifySuccessMsg;
 

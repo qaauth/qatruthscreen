@@ -233,7 +233,7 @@ public class Business extends NID{
 	@CacheLookup
 	WebElement companyverificationtext;
 
-	@FindBy(xpath ="//*[@id='main']/div[2]/div[1]/div/div[2]/div/div[2]/div/div/div/table/thead/tr/th[2]") 
+	@FindBy(xpath ="//table[@class='table table-striped border-top-f4']/thead/tr/th[3]") 
 	@CacheLookup
 	WebElement gstinpanverificationtext;
 
@@ -424,7 +424,7 @@ public class Business extends NID{
 	@CacheLookup
 	WebElement GSTBasisPANSearchCount;
 
-	@FindBy(xpath="/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[3]")
+	@FindBy(xpath="//table[@class='table table-striped border-top-f4']/thead/tr/th[2]")
 	@CacheLookup
 	WebElement GstUinStatusVerification;
 

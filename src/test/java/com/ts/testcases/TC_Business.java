@@ -1057,7 +1057,7 @@ public class TC_Business extends BaseClass{
 		Thread.sleep(100);
 		business.GSTBasisPAN();
 		logger.info("GST Basis PAN Sample submitted");
-		if (business.VerifyGSTBasisPAN().contains("GSTIN/UIN Status"))
+		if (business.VerifyGSTBasisPAN().contains("GSTIN/UIN"))
 		{
 			Assert.assertTrue(true);
 			logger.info("GST Basis PAN verification performed successfully!");
